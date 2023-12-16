@@ -43,6 +43,9 @@ public class ExpensesIncomesTracker extends JFrame {
         UIManager.put("ComboBox.font", customFont);
         UIManager.put("Button.font", customFont);
 
+        balance = 0.0;
+        tableModel = new ExpenseTrackerTableModel();
+
     }
 
 }
