@@ -125,8 +125,13 @@ public class ExpensesIncomesTracker extends JFrame {
 
         clearInputFields();
     }
-
-
+    private void clearInputFields()
+    {
+        dateField.setText("");
+        descriptionField.setText("");
+        amountField.setText("");
+        typeCombobox.setSelectedIndex(0);
+    }
 }
 
 
