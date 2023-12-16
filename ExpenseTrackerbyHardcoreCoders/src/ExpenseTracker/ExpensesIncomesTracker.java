@@ -87,6 +87,45 @@ public class ExpensesIncomesTracker extends JFrame {
         pack();
         setVisible(true);
     }
+    private void addEntry()
+    {
+        String date = dateField.getText();
+        String description = descriptionField.getText();
+        String amountStr = amountField.getText();
+        String type = (String)typeCombobox.getSelectedItem();
+        double amount;
+
+
+        if(amountStr.isEmpty())
+        {
+            JOptionPane.showMessageDialog(this, "Enter the Amount", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        try
+        {
+            amount = Double.parseDouble(amountStr);
+        }
+        catch(NumberFormatException ex)
+        {
+            JOptionPane.showMessageDialog(this, "Invalid Amount Format", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if(type.equals("Expense"))
+        {
+            amount *= -1;
+        }
+
+        ExpenseIncomeEntry entry = new ExpenseIncomeEntry(date, description, amount, type);
+        tableModel.addEntry(entry);
+
+        balance += amount;
+        balanceLabel.setText("Balance: $"+balance);
+
+        clearInputFields();
+    }
+
 
 }
 
