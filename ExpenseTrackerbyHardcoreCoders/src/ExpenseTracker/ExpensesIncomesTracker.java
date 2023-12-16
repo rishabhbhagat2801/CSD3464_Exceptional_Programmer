@@ -37,6 +37,12 @@ public class ExpensesIncomesTracker extends JFrame {
 
         UIManager.put("Label.foreground", Color.BLACK);
 
+        Font customFont = new Font("Arial", Font.BOLD, 20);
+        UIManager.put("Label.font", customFont);
+        UIManager.put("TextField.font", customFont);
+        UIManager.put("ComboBox.font", customFont);
+        UIManager.put("Button.font", customFont);
+
     }
 
 }
