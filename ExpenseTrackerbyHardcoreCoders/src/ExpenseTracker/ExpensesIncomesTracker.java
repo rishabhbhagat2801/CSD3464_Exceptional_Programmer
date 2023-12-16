@@ -74,7 +74,18 @@ public class ExpensesIncomesTracker extends JFrame {
 
         inputPanel.add(addButton);
 
+        JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        bottomPanel.add(balanceLabel);
+        setLayout(new BorderLayout());
 
+        add(inputPanel, BorderLayout.NORTH);
+        add(scrollPane, BorderLayout.CENTER);
+        add(bottomPanel, BorderLayout.SOUTH);
+
+        setTitle("Expenses Tracker by Hardcore Coders");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+        setVisible(true);
     }
 
 }
