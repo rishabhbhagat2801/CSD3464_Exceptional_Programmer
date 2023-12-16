@@ -32,6 +32,11 @@ public class ExpensesIncomesTracker extends JFrame {
         UIManager.put("ComboBox.selectionForeground", Color.WHITE);
         UIManager.put("ComboBox.selectionBackground", Color.BLACK);
 
+        UIManager.put("Button.foreground", Color.WHITE);
+        UIManager.put("Button.background", Color.ORANGE);
+
+        UIManager.put("Label.foreground", Color.BLACK);
+
     }
 
 }
