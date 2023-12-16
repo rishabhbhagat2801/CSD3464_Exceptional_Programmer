@@ -46,6 +46,35 @@ public class ExpensesIncomesTracker extends JFrame {
         balance = 0.0;
         tableModel = new ExpenseTrackerTableModel();
 
+        table = new JTable(tableModel);
+        JScrollPane scrollPane = new JScrollPane(table);
+        table.setFillsViewportHeight(true);
+
+        dateField = new JTextField(10);
+        descriptionField = new JTextField(20);
+        amountField = new JTextField(10);
+        typeCombobox = new JComboBox<>(new String[]{"Expense","Income"});
+
+        addButton = new JButton("Add");
+        addButton.addActionListener(e -> addEntry());
+        balanceLabel = new JLabel("Balance : $" + balance);
+
+        JPanel inputPanel = new JPanel();
+        inputPanel.add(new JLabel("Date :"));
+        inputPanel.add(dateField);
+
+        inputPanel.add(new JLabel("Description :"));
+        inputPanel.add(descriptionField);
+
+        inputPanel.add(new JLabel("Amount :"));
+        inputPanel.add(amountField);
+
+        inputPanel.add(new JLabel("Type :"));
+        inputPanel.add(typeCombobox);
+
+        inputPanel.add(addButton);
+
+
     }
 
 }
